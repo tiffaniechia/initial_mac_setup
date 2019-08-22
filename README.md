@@ -21,5 +21,6 @@ installs (in order):
 
 ```
 #git clone or download & unzip into current directory
+$ chmod a+x ./main.sh
 $ ./main.sh
 ```
