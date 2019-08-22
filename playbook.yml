@@ -8,16 +8,7 @@
       name: "{{ item }}"
       state: present
     with_items:
-      - git
-      - elixir
-      - ruby
-      - node
-      - mongodb
-      - docker
-      - thefuck
-      - zsh
-      - wget
-      - python3
+      - jupyter
 
   - name: Brew cask install applications
     homebrew_cask:
@@ -25,45 +16,19 @@
       state: present
     with_items:
       - google-chrome
-      - firefox
       - iterm2
       - intellij-idea
-      - webstorm
       - atom
-      - sublime-text
-      - charles
-      - sourcetree
       - spotify
-      - slack
       - 1password
-      - java
+      - zoomus
+      - whatsapp
 
-  - name: Install oh my zsh
-    shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-  - name: Copy configured zshrc
-    copy:
-      src: ./zshrc
-      dest: ~/.zshrc
+  - name: pip3 install virtualenv
+    pip:
+      name: virtualenv
+      executable: pip3
 
   - name: Create projects directory
     file:
       path: ~/projects
-      state: directory
-
-  - name: Create tmp directory
-    file:
-      path: ~/tmp
-      state: directory
-    tags: fuze
-
-  - name: Install Fuze zip
-    get_url:
-      url: https://api.fuzemeeting.com/v1/launch/mac_download
-      dest: ~/tmp/Fuze.zip
-      validate_certs: false
-    tags: fuze
-
-  - name: Unarchive Fuze zip
-    shell: unzip ~/tmp/Fuze.zip -d ~/tmp && mv ~/tmp/Fuze_*.app /Applications
-    tags: fuze

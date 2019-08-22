@@ -1,44 +1,25 @@
 ### Initial Setup Script
 
-Mish mash of Applescript, Bash Script, and Ansible to provision a new machine because y'know more time to sip on tea.
+updated 22/08/2019
 
-Installs:
-* xcode command line Tools
-* homebrew
-* pip
-* ansible (did it the 'proper way' with pip)
-* git
-* elixir
-* ruby
-* node
-* mongodb
-* docker
-* thefuck
-* zsh
-* python3
-* google-chrome
-* firefox
-* iterm2
-* intellij-idea
-* webstorm
-* atom
-* sublime-text
-* charles
-* sourcetree
-* spotify
-* slack
-* oh-my-zsh
-* fuze
-* 1password
-* java
-* elasticsearch (did it non brew way, personal preference thing)
-* (atom plugin)  atom-terminal
-* (atom plugin) platformio-atom-ide-terminal
-* (atom plugin) react
-* (atom plugin) script
+installs (in order):
+- zsh (git will be installed)
+- homebrew
+- python (3)
+- ansible
+- jupyter
+- google-chrome
+- iterm2
+- intellij-idea
+- atom
+- spotify
+- 1password
+- zoomus
+- whatsapp
+- virtualenv (pip3)
+- creates `~/projects/` folder
 
-
-#### ToDo:
-* move apm and es into ansible playbook
-* one time password entry
-* return keystrokes
+```
+#git clone or download & unzip into current directory
+$ ./main.sh
+```
